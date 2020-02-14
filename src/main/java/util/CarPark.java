@@ -3,7 +3,7 @@ package util;
 public class CarPark implements ParkingAppObject {
 
     private int carParkSize;
-    private Car carPlaces[];
+    private Car[] carPlaces;
 
     public CarPark(int carParkSize) {
         this.carParkSize = carParkSize;
@@ -15,7 +15,7 @@ public class CarPark implements ParkingAppObject {
         int numberOfFreeSpaces = 0;
 
         for (int i = 0; i < carParkSize; i++) {
-            numberOfFreeSpaces += carPlaces[i] == null ? 0 : 1;
+            numberOfFreeSpaces += carPlaces[i] == null ? 1 : 0;
         }
 
         return numberOfFreeSpaces;
@@ -82,8 +82,8 @@ public class CarPark implements ParkingAppObject {
         for(int i=0; i<carParkSize; i++){
             if (carPlaces[i]!=null){
                 System.out.println("Car at spot number "+
-                        Integer.toString(i+1) + ".  " +
-                        Integer.toString(carPlaces[i].getTimeLeft())+" turns left.");
+                        (i + 1) + ".  " +
+                        carPlaces[i].getTimeLeft() +" turns left.");
                 Thread.sleep(500);
             }
         }
