@@ -15,7 +15,7 @@ public class CarPark implements ParkingAppObject {
         int numberOfFreeSpaces = 0;
 
         for (int i = 0; i < carParkSize; i++) {
-            numberOfFreeSpaces += carPlaces[i] == null ? 0 : 1;
+            numberOfFreeSpaces += carPlaces[i] == null ? 1 : 0;
         }
 
         return numberOfFreeSpaces;
@@ -84,7 +84,7 @@ public class CarPark implements ParkingAppObject {
                 System.out.println("Car at spot number "+
                         (i + 1) + ".  " +
                         carPlaces[i].getTimeLeft() +" turns left.");
-                Thread.sleep(500);
+                Thread.sleep(200);
             }
         }
         System.out.println("------------------------------------------------------------------------------------------");
