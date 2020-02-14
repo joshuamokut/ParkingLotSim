@@ -15,7 +15,7 @@ public class CarPark implements ParkingAppObject {
         int numberOfFreeSpaces = 0;
 
         for (int i = 0; i < carParkSize; i++) {
-            numberOfFreeSpaces += carPlaces[i] == null ? 1 : 0;
+            numberOfFreeSpaces += carPlaces[i] == null ? 0 : 1;
         }
 
         return numberOfFreeSpaces;
